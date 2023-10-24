@@ -61,7 +61,7 @@ export async function getAddressesBySocial(
   let result = await client.getAddressesBySocial({ platform, profileId });
   return result.address;
 }
-async function sendDonate(
+export async function sendDonate(
   client: DonexClient,
   recipient: Addr,
   amount: number,

@@ -21,7 +21,7 @@ const WalletBalance = () => {
   return (
     <Box my={2}>
         {balances.map((coin, index) => (
-          <Typography key={index}>Balance: {parseInt(coin.amount, 10)*1e-9} ATOM</Typography>
+          <Typography key={index}>Balance: {parseInt(coin.amount, 10)*1e-9} CMDX</Typography>
         ))}
     </Box>
   );

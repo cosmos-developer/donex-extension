@@ -6,19 +6,18 @@ import Logged from './pages/Logged';
 import { CheckIfLocalEmpty } from './stores/LocalStorage';
 import { Box } from '@mui/material';
 import { Providers } from './components/providers';
+import { Router, BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <Providers>
-    <Box className = "App">
+    <Box className="App">
       <header className="App-header">
-          <CheckLogged/>
+          <CheckLogged />
       </header>
     </Box>
-    </Providers>
   );
 }
 
 const CheckLogged = () => {
-  return (CheckIfLocalEmpty())? <ImportWallet/>: <Logged/>;
+  return (CheckIfLocalEmpty()) ? <ImportWallet /> : <Logged />;
 }
 export default App;

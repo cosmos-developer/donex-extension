@@ -5,6 +5,8 @@ import { GetDataFromLocal, GetFromLocal } from "../stores/LocalStorage";
 import WalletBalance from "../components/WalletBalance";
 import { createClientFromMnemonic, getAddressesBySocial } from "../client-ts";
 import { useChain, useChainWallet, useWallet } from "@cosmos-kit/react";
+import { donateToSocialLink } from "../cosmos/methods";
+import { Center } from "@interchain-ui/react";
 
 const Logged = () => {
     // const {mainWallet} = useWallet("keplr-extension");
@@ -16,9 +18,9 @@ const Logged = () => {
     (async () => {
         let mnemonic = GetDataFromLocal("wallet").mnemonic;
         if (mnemonic === undefined || mnemonic == "") {
-            console.log("not found mnemonic"); 
+            console.log("not found mnemonic");
             return;
-        } 
+        }
         let client = await createClientFromMnemonic(mnemonic);
         if (client === undefined) {
             console.log("not found");
@@ -46,9 +48,15 @@ const Logged = () => {
         <Stack maxWidth={0.95}>
             <Typography textAlign={"center"} fontSize={"28px"} sx={{ marginY: 4 }}>You are logged in</Typography>
             <Box display={"flex"} justifyContent={"center"} flexDirection={"column"}>
-                <TextField variant="filled" label="Social link" inputProps={{ style: { color: 'white' } }} InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
-                    sx={{ backgroundColor: '#102125' }}></TextField>
-                <Button variant="contained"
+                <Stack direction={"row"} justifyContent={"center"} spacing={2}>
+                    <TextField id="social-link-input" variant="filled" label="Social link" inputProps={{ style: { color: 'white' } }}
+                        InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
+                        sx={{ backgroundColor: '#102125' }}></TextField>
+                    <TextField id="amount" variant="filled" label="Amount" inputProps={{ style: { color: 'white' } }}
+                        InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
+                        sx={{ backgroundColor: '#102125' , maxWidth: "75px"}}></TextField>
+                </Stack>
+                <Button variant="contained" onClick={donateToSocialLink}
                     sx={{ m: 2, width: "250px", height: "75px", fontSize: "28px", alignSelf: "center" }}>
                     DONATE!!!
                 </Button>
