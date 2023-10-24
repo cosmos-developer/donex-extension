@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "unordered_map": "cpp"
+    }
+}

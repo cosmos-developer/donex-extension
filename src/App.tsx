@@ -1,26 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import ImportWallet from './pages/ImportWallet';
+import Logged from './pages/Logged';
+import { CheckIfLocalEmpty } from './stores/LocalStorage';
+import { Box } from '@mui/material';
+import { Providers } from './components/providers';
 function App() {
   return (
-    <div className="App">
+    <Providers>
+    <Box className = "App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <CheckLogged/>
       </header>
-    </div>
+    </Box>
+    </Providers>
   );
 }
 
+const CheckLogged = () => {
+  return (CheckIfLocalEmpty())? <ImportWallet/>: <Logged/>;
+}
 export default App;

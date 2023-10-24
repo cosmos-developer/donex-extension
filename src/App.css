@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  width: 400px;
+  height: 600px;
 }
 
 .App-logo {
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#private-key {
+  font-size: 14px;
+}
+
+#public-address {
+  font-size: 14px;
 }
