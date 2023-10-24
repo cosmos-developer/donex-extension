@@ -4,7 +4,12 @@ import { CheckIfLocalEmpty, GetFullFromLocal, SaveToLocal } from "../stores/Loca
 
 export const generateWalletFromSeedPhrase = async (seedPhrase: any) => {
     try {
-        return await Secp256k1HdWallet.fromMnemonic(seedPhrase);
+        return await Secp256k1HdWallet.fromMnemonic(
+            seedPhrase,
+            {
+                prefix: "comdex"
+            },
+        );
     } catch (error) {
         console.log(error);
     };

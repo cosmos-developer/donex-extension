@@ -3,7 +3,7 @@ import { Box, Button, FormControlLabel, Stack, Switch, TextField, Typography } f
 import React, { memo, useEffect } from "react";
 import { GetDataFromLocal, GetFromLocal } from "../stores/LocalStorage";
 import WalletBalance from "../components/WalletBalance";
-import { createClient, createClientFromMnemonic, getAddressesBySocial } from "../client-ts";
+import { createClientFromMnemonic, getAddressesBySocial } from "../client-ts";
 import { useChain, useChainWallet, useWallet } from "@cosmos-kit/react";
 
 const Logged = () => {
@@ -23,11 +23,12 @@ const Logged = () => {
         if (client === undefined) {
             console.log("not found");
         } else {
-            console.log(getAddressesBySocial(
+            let result = await getAddressesBySocial(
                 client,
                 "facebook",
                 "123"
-            ));
+            )
+            console.log(result);
         }
     })();
 

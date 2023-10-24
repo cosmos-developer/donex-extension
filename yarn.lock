@@ -2151,16 +2151,7 @@
     "@floating-ui/utils" "^0.1.1"
     tabbable "^6.0.1"
 
-"@floating-ui/react@^0.26.0":
-  version "0.26.1"
-  resolved "https://registry.npmjs.org/@floating-ui/react/-/react-0.26.1.tgz"
-  integrity sha512-5gyJIJ2tZOPMgmZ/vEcVhdmQiy75b7LPO71sYIiDsxGcZ4hxLuygQWCuT0YXHqppt//Eese+L6t5KnX/gZ3tVA==
-  dependencies:
-    "@floating-ui/react-dom" "^2.0.2"
-    "@floating-ui/utils" "^0.1.5"
-    tabbable "^6.0.1"
-
-"@floating-ui/utils@^0.1.1", "@floating-ui/utils@^0.1.3", "@floating-ui/utils@^0.1.5":
+"@floating-ui/utils@^0.1.1", "@floating-ui/utils@^0.1.3":
   version "0.1.6"
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
@@ -2214,13 +2205,6 @@
     motion "^10.16.2"
     rainbow-sprinkles "^0.17.0"
     zustand "^4.3.8"
-
-"@internationalized/number@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.npmjs.org/@internationalized/number/-/number-3.3.0.tgz"
-  integrity sha512-PuxgnKE5NJMOGKUcX1QROo8jq7sW7UWLrL5B6Rfe8BdWgU/be04cVvLyCeALD46vvbAv3d1mUvyHav/Q9a237g==
-  dependencies:
-    "@swc/helpers" "^0.5.0"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -3189,13 +3173,6 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@swc/helpers@^0.5.0":
-  version "0.5.3"
-  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.3.tgz"
-  integrity sha512-FaruWX6KdudYloq1AHD/4nU+UsMTdNE8CKyrseXWEcgjDAbvkwJg2QGPAnfIJLIWsjZOSPLOAykK6fuYp4vp4A==
-  dependencies:
-    tslib "^2.4.0"
-
 "@testing-library/dom@^8.5.0":
   version "8.20.1"
   resolved "https://registry.npmjs.org/@testing-library/dom/-/dom-8.20.1.tgz"
@@ -4093,11 +4070,6 @@
   resolved "https://registry.npmjs.org/@zag-js/anatomy/-/anatomy-0.15.0.tgz#c32b3bf2050f81ed9eace140542db43a565e3454"
   integrity sha512-+lmu/JVQ6Q5M9Tmbt1sXVkp3CtP10JYOo/PU2L6w6mXpwazT5FUpsuorrBrBM9rhWOnxI7CVvFy7r/rxReDWgg==
 
-"@zag-js/anatomy@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/anatomy/-/anatomy-0.26.0.tgz"
-  integrity sha512-B0u3uU++3TXqgklH0fwPqb12y+kMSTKBD40S5+HFz/mmaxolNaJzT3QfkT4NfD+9Q3GdlHA4uQqsxhi6SfSb5w==
-
 "@zag-js/aria-hidden@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/aria-hidden/-/aria-hidden-0.15.0.tgz#97ef569a3a149df6ab89c9de08595729fe4f406c"
@@ -4111,14 +4083,6 @@
   integrity sha512-eH3yx9nv0hMyoR+hWtJVJpCagpU5s61rOMHfLkdjMPTWSVjQZdp3SGEm6BTUjBlNbQkTZhUbPpg/FEqx1iPfJw==
   dependencies:
     "@zag-js/store" "0.15.0"
-    klona "2.0.6"
-
-"@zag-js/core@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/core/-/core-0.26.0.tgz"
-  integrity sha512-pwVFL1hTZ7w86NEA1Xs9Brq9OmTkW94JTGsBGNEMuH6LVuGGF/fike/nkJP/G/DpvdIrkwI5dKLr7P/nQ55DbQ==
-  dependencies:
-    "@zag-js/store" "0.26.0"
     klona "2.0.6"
 
 "@zag-js/dialog@^0.15.0":
@@ -4154,23 +4118,10 @@
     "@zag-js/text-selection" "0.15.0"
     "@zag-js/types" "0.15.0"
 
-"@zag-js/dom-event@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/dom-event/-/dom-event-0.26.0.tgz"
-  integrity sha512-Rc+ecXYDLG7wFPWVMS5XPXIQVqPUo0jXjMG5Yj7USkSBm5bg3bGsrJ2WyDpkxvvZpYmbXO6OaSyWdclrQNEcHg==
-  dependencies:
-    "@zag-js/text-selection" "0.26.0"
-    "@zag-js/types" "0.26.0"
-
 "@zag-js/dom-query@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/dom-query/-/dom-query-0.15.0.tgz#48954851575f0f11127d48cf271ce323bb13f1f0"
   integrity sha512-gxm7GefQ+ggJE+iN0/kHgbM90DPd4RZYoQC6TQOWy3nxij69IuoSI6goMakJ33hUckszWm9z86Sqe1U1puzssQ==
-
-"@zag-js/dom-query@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/dom-query/-/dom-query-0.26.0.tgz"
-  integrity sha512-M28nfCTl+Vc23OnttM3jv5Zn6pq/9qNkN8NQ9rCsemOALJvNOQeu8MFv7d6Jhgg3f8RqEB6EN0rS64UbgBovRg==
 
 "@zag-js/form-utils@0.15.0":
   version "0.15.0"
@@ -4178,13 +4129,6 @@
   integrity sha512-3gFzyF8x48wK2Fabt6rxjMETmhSlwTtCjF10XFrKscL1LZASc3Abl7lJcpTEmVJ5kb5D+50Zw+jlHjHrvddH6g==
   dependencies:
     "@zag-js/mutation-observer" "0.15.0"
-
-"@zag-js/form-utils@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/form-utils/-/form-utils-0.26.0.tgz"
-  integrity sha512-ylvONwa9HkVOdRzI+NsfNCMduFbmukvBjlPv7PEtTuZznUasFEDxLdIAp6P6hlYIPGgZXl05IfyTPSLAwYPn9g==
-  dependencies:
-    "@zag-js/mutation-observer" "0.26.0"
 
 "@zag-js/interact-outside@0.15.0":
   version "0.15.0"
@@ -4201,11 +4145,6 @@
   resolved "https://registry.npmjs.org/@zag-js/mutation-observer/-/mutation-observer-0.15.0.tgz#3848f7d9c9a39a7c7d86ed49cc6c5a4e0ffdcf85"
   integrity sha512-7e2d1RYA0nuKOAJknbYBw6XfywF5eFC/4oel/nINHmS14JtjZnjMq/8z/kdrMMJnlQHou+wnaoskOLv+4Sv7pw==
 
-"@zag-js/mutation-observer@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/mutation-observer/-/mutation-observer-0.26.0.tgz"
-  integrity sha512-JDtHyVLsVCxVscKLsMSxQ0Hjg2xmTmWL5C+272mHkr0r2JS2x6Z1dMn5x0capSz9vXUbHUgoHz9PSJXHkRJwAA==
-
 "@zag-js/number-input@^0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/number-input/-/number-input-0.15.0.tgz#c1f0ebc405ed9bfc22ac3d4fedc0cab1d585c388"
@@ -4221,31 +4160,10 @@
     "@zag-js/types" "0.15.0"
     "@zag-js/utils" "0.15.0"
 
-"@zag-js/number-input@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/number-input/-/number-input-0.26.0.tgz"
-  integrity sha512-1KwIeCQsgnYOUzdAUMmaqiOwG+YOJIYUvmBhgNQld2IhkdqykXTIM9cZoQyNsjsYnzXhe7y6IMskUx/GlvzlCA==
-  dependencies:
-    "@internationalized/number" "^3.3.0"
-    "@zag-js/anatomy" "0.26.0"
-    "@zag-js/core" "0.26.0"
-    "@zag-js/dom-event" "0.26.0"
-    "@zag-js/dom-query" "0.26.0"
-    "@zag-js/form-utils" "0.26.0"
-    "@zag-js/mutation-observer" "0.26.0"
-    "@zag-js/number-utils" "0.26.0"
-    "@zag-js/types" "0.26.0"
-    "@zag-js/utils" "0.26.0"
-
 "@zag-js/number-utils@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/number-utils/-/number-utils-0.15.0.tgz#06d19e2145e183acebea272412fdb5780c7cbd81"
   integrity sha512-ebDPCv4UNl5qAe+x55NSUK5gMLbhlqh8mVVq6EnPUqPfbglcjUgNzht78TZ3d+0rdfgC3F8SI3pWaZk9DY4O1Q==
-
-"@zag-js/number-utils@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/number-utils/-/number-utils-0.26.0.tgz"
-  integrity sha512-XjsDVecCn/svNx/jXObD2utGFkNc+x93bRD/CPjGF40sRWka41xIpobOgLux2v8wWBM/FwMcU1W53eenTaCGkg==
 
 "@zag-js/react@^0.15.0":
   version "0.15.0"
@@ -4255,16 +4173,6 @@
     "@zag-js/core" "0.15.0"
     "@zag-js/store" "0.15.0"
     "@zag-js/types" "0.15.0"
-    proxy-compare "2.5.1"
-
-"@zag-js/react@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/react/-/react-0.26.0.tgz"
-  integrity sha512-PEZm+qRhL162PFbKwMNpnULsN6OGmqqp0cT31T2lMpGUY98bPMy9e4iWyqvrwMroJyr67Cak3/GZ3l5qMEJNNA==
-  dependencies:
-    "@zag-js/core" "0.26.0"
-    "@zag-js/store" "0.26.0"
-    "@zag-js/types" "0.26.0"
     proxy-compare "2.5.1"
 
 "@zag-js/remove-scroll@0.15.0":
@@ -4278,13 +4186,6 @@
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/store/-/store-0.15.0.tgz#e3cf5a10588ce2bb7f94280b95437fec6650c0f8"
   integrity sha512-xq4WFrd+fqJE+Y0Os3FhN2/ru2zxvIvV8IT9y5Ev+3VRZw+L6Ut4tEjOONk+zr+UpkRx3jflPqlekjLHtowp0w==
-  dependencies:
-    proxy-compare "2.5.1"
-
-"@zag-js/store@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/store/-/store-0.26.0.tgz"
-  integrity sha512-NcIWqP5RE7QU9zHi4ixl6CVX0Ff56Q8tAikwWPKAQOin/XctI1rHGNWI0/uUa+9Ib3Wsc2M83I6kTLrWstkZQQ==
   dependencies:
     proxy-compare "2.5.1"
 
@@ -4302,13 +4203,6 @@
   dependencies:
     "@zag-js/dom-query" "0.15.0"
 
-"@zag-js/text-selection@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/text-selection/-/text-selection-0.26.0.tgz"
-  integrity sha512-BTlb/g8kj6Fs8FZdldLk2kJ6Za5qkihp0GtwjXBTtU6NSFkh96MPMyhCXf+WrFyet4Sbna7JyeTbfGLbomPxYg==
-  dependencies:
-    "@zag-js/dom-query" "0.26.0"
-
 "@zag-js/types@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/types/-/types-0.15.0.tgz#22fb42c125deb786f00ad984d111236bc9f2002f"
@@ -4316,22 +4210,10 @@
   dependencies:
     csstype "3.1.2"
 
-"@zag-js/types@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/types/-/types-0.26.0.tgz"
-  integrity sha512-pQWK9dngn9zYCIzEbuGG9PboCYd1CaTWgEX3+KGFYTqOEcunPijx1MW3LZNmLaqYZLNd8yCRU5IKlno/cRBKVA==
-  dependencies:
-    csstype "3.1.2"
-
 "@zag-js/utils@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@zag-js/utils/-/utils-0.15.0.tgz#65e2df9e6932211fb6f927e6667d35e5b4b593b7"
   integrity sha512-aNjydiheTKMoIo1wASk3XgN3mbcCiCk2zAiUyldU4JCw9xWevMk5aSszW2v3A0yms6z+qhRb77Z50fejG7OlSA==
-
-"@zag-js/utils@0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@zag-js/utils/-/utils-0.26.0.tgz"
-  integrity sha512-TKg0l0FNIRZS2ocU5KPh5oXHljiaWJ1S8vsbTutCklurBWsOU1qVPoawPKBoNCSWEXdTqmvwGwD8smqV6zjnOQ==
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.6"
@@ -11676,7 +11558,7 @@ tslib@1.14.1, tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.3.1, tslib@^2.4.0:
+tslib@^2.0.3, tslib@^2.3.1:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==

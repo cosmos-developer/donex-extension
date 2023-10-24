@@ -27,7 +27,7 @@ export function Providers({ children }: { children: any }) {
             endpoints: {
               "comdex": {
                 rpc: ["http://ec2-3-0-52-194.ap-southeast-1.compute.amazonaws.com:26657"],
-                rest: ["http://ec2-3-0-52-194.ap-southeast-1.compute.amazonaws.com:26657"],
+                rest: ["http://ec2-3-0-52-194.ap-southeast-1.compute.amazonaws.com:1317"],
               }
             }
           }

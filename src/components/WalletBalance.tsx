@@ -9,7 +9,7 @@ const WalletBalance = () => {
   useEffect(() => {
     const fetchBalances = async () => {
       const wallet = GetDataFromLocal("wallet");
-      const rpc = "https://cosmos-rpc.publicnode.com:443";
+      const rpc = "http://ec2-3-0-52-194.ap-southeast-1.compute.amazonaws.com:26657";
       const client = await StargateClient.connect(rpc);
       const response = await client.getAllBalances(wallet.pubaddr);
       setBalances(response); // Lưu mảng Coin[] vào state "balances"
