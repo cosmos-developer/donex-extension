@@ -67,13 +67,9 @@ export async function createClientFromMnemonic(mnemonic:string) {
     // XXX: This line is needed to set the sender address for SigningCosmosClient.
     // signer có thể lấy từ Mnemonic?
     const signer = await generateWalletFromSeedPhrase(mnemonic) as OfflineAminoSigner;
+    console.log("signer = " + signer);
     const accounts = await signer.getAccounts();
     // Initialize the gaia api with the offline signer that is injected by Keplr extension.
-    const cosmJS = new SigningCosmosClient(
-      "https://lcd-cosmoshub.keplr.app",
-      accounts[0].address,
-      signer,
-    );
     let client = await SigningCosmWasmClient.connectWithSigner(
       rpcEndpoint,
       signer,
@@ -81,8 +77,10 @@ export async function createClientFromMnemonic(mnemonic:string) {
         gasPrice: { amount: Decimal.fromUserInput("1000", 0), denom: "ucmdx" },
       }
     );
+    console.log("client = " + client);
 
     let donex = new DonexClient(client, accounts[0].address, contract_addr);
+    console.log("donex = " + donex);
     return donex;
   }}
   catch (e){
