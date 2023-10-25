@@ -49,12 +49,12 @@ export const donateToSocialLink = async () => {
     const amountInput = document.getElementById("amount")?.textContent;
     let platform = "facebook";
     let profileId = "123";
-    let amount = 100000; // get from amount field
+    let amount = 100000000; // get from amount field
     let denom = "ucmst";
     //link processing => platfrom and id
     let mnemonic = GetDataFromLocal("wallet").mnemonic;
     if (mnemonic === undefined || mnemonic == "") {
-        console.log("not found mnemonic");
+        alert("not found mnemonic");
         return;
     } else {
         let client = await createClientFromMnemonic(mnemonic);
@@ -66,11 +66,11 @@ export const donateToSocialLink = async () => {
                 amount,
                 denom
             );
-            console.log("done donate");
+            alert("done donate with transaction hash = " + result.transactionHash);
             return result;
         }
         else {
-            console.log("client not found");
+            alert("client not found");
         }
     }
 }
