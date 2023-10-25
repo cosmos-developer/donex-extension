@@ -39,7 +39,15 @@ const Logged = () => {
         // console.log(client);
         // createClient();
         // console.log(client);
-
+        chrome.storage.local.get("count", function(data) {
+            if(typeof data.count == "undefined") {
+                // That's kind of bad
+                console.log("not found social link");
+            } else {
+                // Use data.count
+                console.log(data.count);
+            }
+        });
         //   linking(getSigningCosmWasmClient, address!);
     }, []);
 
@@ -52,9 +60,9 @@ const Logged = () => {
                     <TextField id="social-link-input" variant="filled" label="Social link" inputProps={{ style: { color: 'white' } }}
                         InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
                         sx={{ backgroundColor: '#102125' }}></TextField>
-                    <TextField id="amount" variant="filled" label="Amount" inputProps={{ style: { color: 'white' } }}
+                    <TextField id="amount" variant="filled" label="Amount" type="number" defaultValue="100000" inputProps={{ style: { color: 'white' } }}
                         InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
-                        sx={{ backgroundColor: '#102125' , maxWidth: "75px"}}></TextField>
+                        sx={{ backgroundColor: '#102125' , maxWidth: "100px"}}></TextField>
                 </Stack>
                 <Button variant="contained" onClick={donateToSocialLink}
                     sx={{ m: 2, width: "250px", height: "75px", fontSize: "28px", alignSelf: "center" }}>
@@ -64,8 +72,6 @@ const Logged = () => {
             <FormControlLabel control={<Switch id="ShowDonate" defaultChecked />} label="Enable donate button" />
             <Typography noWrap={false} my={2}
                 sx={{ wordWrap: "break-word", p: 0 }}>public address: {GetDataFromLocal("wallet").pubaddr}</Typography>
-            <Typography noWrap={false} my={2}
-                sx={{ wordWrap: "break-word", p: 0 }}>mnemonic: {GetDataFromLocal("wallet").mnemonic}</Typography>
             <WalletBalance></WalletBalance>
         </Stack>
     )

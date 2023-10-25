@@ -12,7 +12,6 @@ const GetDataFromLocal = (key: string) => {
 }
 const CheckIfLocalEmpty = () => {
     const wallet = GetFromLocal("wallet");
-    console.log(wallet);
     if (wallet !== null ){
         return false;
     } 

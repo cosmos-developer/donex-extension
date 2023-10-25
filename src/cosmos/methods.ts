@@ -45,11 +45,19 @@ export const HandleButtonClick_cosmos = async () => {
 
 }
 export const donateToSocialLink = async () => {
-    const socialLink = document.getElementById("social-link-input")?.textContent;
-    const amountInput = document.getElementById("amount")?.textContent;
+    const socialLinkElement = document.getElementById("social-link-input") as HTMLInputElement;
+    let socialLink;
+    if (socialLinkElement) {
+        socialLink = socialLinkElement.value;
+    }
+    const amountElement = document.getElementById("amount") as HTMLInputElement;
+    let amountInput = "100000";
+    if (amountElement){
+        amountInput = amountElement.value;
+    }
+    let amount = parseInt(amountInput, 10) ;
     let platform = "facebook";
-    let profileId = "123";
-    let amount = 100000000; // get from amount field
+    let profileId = "123"; 
     let denom = "ucmst";
     //link processing => platfrom and id
     let mnemonic = GetDataFromLocal("wallet").mnemonic;

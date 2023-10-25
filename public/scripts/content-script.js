@@ -1,5 +1,5 @@
 const sendDonateRequest = (SocialLink) => {
-    window.open(SocialLink);
+    chrome.storage.local.set({count: SocialLink});
 }
 
 const updateContent = () => {
@@ -11,7 +11,7 @@ const updateContent = () => {
     h4Elements.forEach((h4) => {
         // Tìm thẻ con đầu tiên là thẻ span có class "vxcv"
         const spanElement = h4.querySelector('span.xt0psk2');
-        if (spanElement && !h4.querySelector('button')) {
+        if (spanElement && !h4.querySelector('button') && h4.firstChild.tagName == 'SPAN') {
             const button = document.createElement('button');
             button.textContent = "DONATE";
             const a_tag = spanElement.firstElementChild;
@@ -27,7 +27,7 @@ const updateContent = () => {
     h3Elements.forEach((h3) => {
         // Tìm thẻ con đầu tiên là thẻ span có class "vxcv"
         const spanElement = h3.querySelector('span.xt0psk2');
-        if (spanElement && !h3.querySelector('button')) {
+        if (spanElement && !h3.querySelector('button') && h3.firstChild.tagName == 'SPAN') {
             const button = document.createElement('button');
             button.textContent = "DONATE";
             const a_tag = spanElement.firstElementChild;
