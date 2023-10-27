@@ -22,7 +22,6 @@ export async function createClientFromMnemonic(mnemonic:string) {
   // XXX: This line is needed to set the sender address for SigningCosmosClient.
   // signer có thể lấy từ Mnemonic?
   const signer = await generateWalletFromSeedPhrase(mnemonic) as OfflineAminoSigner;
-  console.log("signer = " + signer);
   const accounts = await signer.getAccounts();
   // Initialize the gaia api with the offline signer that is injected by Keplr extension.
   let client = await SigningCosmWasmClient.connectWithSigner(

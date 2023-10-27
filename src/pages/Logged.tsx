@@ -3,7 +3,7 @@ import { Box, Button, FormControlLabel, Stack, Switch, TextField, Typography } f
 import React, { memo, useEffect } from "react";
 import { GetDataFromLocal, GetFromLocal } from "../stores/LocalStorage";
 import WalletBalance from "../components/WalletBalance";
-import { createClientFromMnemonic, getAddressesBySocial } from "../client-ts";
+import { createClientFromMnemonic, getAddressesBySocial, sendDonate } from "../client-ts";
 import { useChain, useChainWallet, useWallet } from "@cosmos-kit/react";
 import { donateToSocialLink } from "../cosmos/methods";
 import { Center } from "@interchain-ui/react";
@@ -15,40 +15,58 @@ const Logged = () => {
     // mainWallet?.connect();
     // console.log(getSigningCosmWasmClient, wallet, address);
     // const client = getSigningCosmWasmClient();
-    (async () => {
-        let mnemonic = GetDataFromLocal("wallet").mnemonic;
-        if (mnemonic === undefined || mnemonic == "") {
-            console.log("not found mnemonic");
-            return;
+    const setupDonate = (socialLink: any) => {
+        const socialLinkElement = document.getElementById("social-link-input") as HTMLInputElement;
+        const amountElement = document.getElementById("amount") as HTMLInputElement;
+        if (socialLinkElement) {
+            socialLinkElement.value = socialLink;
         }
-        let client = await createClientFromMnemonic(mnemonic);
-        if (client === undefined) {
-            console.log("not found");
-        } else {
-            let result = await getAddressesBySocial(
-                client,
-                "facebook",
-                "123"
-            )
-            console.log(result);
-        }
-    })();
+    }
 
     useEffect(() => {
-        // const client = createClientFromMnemonic(GetDataFromLocal("wallet").mnemonic);
-        // console.log(client);
-        // createClient();
-        // console.log(client);
-        chrome.storage.local.get("count", function(data) {
-            if(typeof data.count == "undefined") {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id!, { type: "msg_from_popup" }, function (response) {
+                console.log("message sent");
+                console.log(response);
+            });
+        });
+        let socialLink;
+        chrome.storage.local.get("count", function (data) {
+            if (typeof data.count == "undefined") {
                 // That's kind of bad
                 console.log("not found social link");
             } else {
                 // Use data.count
+                socialLink = data.count;
                 console.log(data.count);
+                setupDonate(socialLink);
             }
         });
-        //   linking(getSigningCosmWasmClient, address!);
+        //link process to platfrom and id
+        //one - click donate, options to choice
+        // TEST DONATE HERE
+        (async () => {
+            let { mnemonic } = GetDataFromLocal("wallet");
+            if (mnemonic === undefined || mnemonic == "") {
+                console.log("not found mnemonic");
+                return;
+            }
+            let client = await createClientFromMnemonic(mnemonic);
+            if (client === undefined) {
+                console.log("not found");
+            } else {
+                //address = await getAddressBySocial( link process(socialLink) =>  {platform, id})
+                let address = await getAddressesBySocial(client, "facebook", "123");
+                const amountElement = document.getElementById("amount") as HTMLInputElement;
+                let amountInput = "100000";
+                if (amountElement) {
+                    amountInput = amountElement.value;
+                };
+                let amount = parseInt(amountInput, 10);
+                //     let result = await sendDonate(client, address[0],amount,"ucmst");
+                //     console.log(result);
+            }
+        })();
     }, []);
 
 
@@ -62,7 +80,7 @@ const Logged = () => {
                         sx={{ backgroundColor: '#102125' }}></TextField>
                     <TextField id="amount" variant="filled" label="Amount" type="number" defaultValue="100000" inputProps={{ style: { color: 'white' } }}
                         InputLabelProps={{ style: { color: '#FBEEE6', fontWeight: 'bold' } }} focused
-                        sx={{ backgroundColor: '#102125' , maxWidth: "100px"}}></TextField>
+                        sx={{ backgroundColor: '#102125', maxWidth: "100px" }}></TextField>
                 </Stack>
                 <Button variant="contained" onClick={donateToSocialLink}
                     sx={{ m: 2, width: "250px", height: "75px", fontSize: "28px", alignSelf: "center" }}>
